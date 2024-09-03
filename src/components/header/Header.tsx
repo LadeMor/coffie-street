@@ -4,6 +4,7 @@ import "./Header.scss";
 
 import main_logo from "../../assets/icons/logo_coffe.svg";
 import icon_card from "../../assets/icons/icons_cart.svg";
+import search_icon from "../../assets/icons/akar-icons_search.svg";
 
 
 const Header = () => {
@@ -11,15 +12,18 @@ const Header = () => {
         <header>
             <Container>
                 <nav>
-                    <img src={main_logo} className="header-main-logo"/>
+                    <img src={main_logo} alt="Coffee Street Logo" className="header-main-logo"/>
                     <div className="header-links">
                         <a>About Us</a>
                         <a>Our Product</a>
                         <a>Delivery</a>
                     </div>
                     <div className="header-search-panel">
-                        <input type="text"/>
-                        <img src={icon_card}/>
+                        <div className="header-search-panel-input-container">
+                            <img src={search_icon} alt="Search"/>
+                            <input type="text" placeholder="Cappuccino"/>
+                        </div>
+                        <img src={icon_card} alt="Shopping Cart"/>
                     </div>
                 </nav>
             </Container>

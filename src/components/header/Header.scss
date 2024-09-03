@@ -1,11 +1,58 @@
 header{
-    background-color: var(--accents-color);
-
+    background-color: var(--light-accents-color);
+    font-family: 'Poppins';
     
     nav{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+        padding: 25px 0px 25px 0px;
+        
+        .header-links{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            font-size: 20px;
+
+            a{
+                cursor: pointer;
+                transition: 0.3s;
+            }
+
+            a:hover{
+                color:var(--primary-color);
+            }
+        }
+
+        .header-search-panel{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+
+            .header-search-panel-input-container{
+                display: flex;
+                align-items: center;
+                position: relative;
+
+                input{
+                    font-size: 13px;
+                    color: var(--light-color);
+                    padding: 15px 5px 15px 40px;
+                    border-radius: 25px;
+                    border: none;
+                    box-shadow: 0px 0px 20px rgb(156, 156, 156);
+                }
+
+                img{
+                    position: absolute;
+                    left:10px
+                }
+            }
+        }
     }
 }

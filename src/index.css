@@ -2,8 +2,16 @@
   --primary-color: #FF902B;
   --secondary-color: #2F2105;
   --accents-color: #F9D9AA;
+  --light-accents-color: #F6EBDA;
   --glass-color: white;
   --light-color: #7E7D7A;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url('./assets/fonts/Poppins-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal
 }
 
 body {
