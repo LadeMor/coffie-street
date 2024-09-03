@@ -6,6 +6,7 @@ import "./Main.scss";
 import exclude from "../../assets/icons/Exclude.svg";
 import main_coffie from "../../assets/images/main-coffie.png";
 import rate_star from "../../assets/icons/akar-icons_star.svg";
+import bg_coffie_beans from "../../assets/images/bg-coffie-beans.png";
 
 const Main = () => {
     return(
@@ -39,6 +40,7 @@ const Main = () => {
                                 <div className="border"></div>
                             </div>
                         </div>
+                        <img src={bg_coffie_beans} className="bg-top-coffie-beans"/>
                     </div>
                 </Container>
             </section>

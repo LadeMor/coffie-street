@@ -1,6 +1,9 @@
 header{
     background-color: var(--light-accents-color);
     font-family: 'Poppins';
+    padding-bottom: 40px;
+    position: relative;
+    z-index: -2;
     
     nav{
         display: flex;
@@ -8,51 +11,71 @@ header{
         justify-content: space-between;
         align-items: center;
         padding: 25px 0px 25px 0px;
+        position: relative;
+        z-index: 1;
+
+        .header-main-logo{
+        }
         
-        .header-links{
+        .header-navigation{
             display: flex;
-            flex-direction: row;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
-            gap: 20px;
-            font-size: 20px;
+            gap: 150px;
 
-            a{
-                cursor: pointer;
-                transition: 0.3s;
-            }
-
-            a:hover{
-                color:var(--primary-color);
-            }
-        }
-
-        .header-search-panel{
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-
-            .header-search-panel-input-container{
+            .header-links{
                 display: flex;
+                flex-direction: row;
                 align-items: center;
-                position: relative;
-
-                input{
-                    font-size: 13px;
-                    color: var(--light-color);
-                    padding: 15px 5px 15px 40px;
-                    border-radius: 25px;
-                    border: none;
-                    box-shadow: 0px 0px 20px rgb(156, 156, 156);
+                justify-content: center;
+                gap: 30px;
+                font-size: 20px;
+    
+                a{
+                    cursor: pointer;
+                    transition: 0.3s;
                 }
-
-                img{
-                    position: absolute;
-                    left:10px
+    
+                a:hover{
+                    color:var(--primary-color);
+                }
+            }
+    
+            .header-search-panel{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                gap: 20px;
+                position: relative;
+                    z-index: 1;
+    
+                .header-search-panel-input-container{
+                    display: flex;
+                    align-items: center;
+                    position: relative;
+                    z-index: 1;
+    
+                    input{
+                        font-size: 13px;
+                        color: var(--light-color);
+                        padding: 15px 5px 15px 40px;
+                        border-radius: 25px;
+                        border: none;
+                        box-shadow: 0px 0px 20px rgb(156, 156, 156);
+                        position: relative;
+                        z-index: 1;
+                    }
+    
+                    img{
+                        position: absolute;
+                        left:10px;
+                        z-index: 2;
+                    }
                 }
             }
         }
+        
+        
     }
 }

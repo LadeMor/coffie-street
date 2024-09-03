@@ -13,17 +13,19 @@ const Header = () => {
             <Container>
                 <nav>
                     <img src={main_logo} alt="Coffee Street Logo" className="header-main-logo"/>
-                    <div className="header-links">
-                        <a>About Us</a>
-                        <a>Our Product</a>
-                        <a>Delivery</a>
-                    </div>
-                    <div className="header-search-panel">
-                        <div className="header-search-panel-input-container">
-                            <img src={search_icon} alt="Search"/>
-                            <input type="text" placeholder="Cappuccino"/>
+                    <div className="header-navigation">
+                        <div className="header-links">
+                            <a>About Us</a>
+                            <a>Our Product</a>
+                            <a>Delivery</a>
                         </div>
-                        <img src={icon_card} alt="Shopping Cart"/>
+                        <div className="header-search-panel">
+                            <div className="header-search-panel-input-container">
+                                <img src={search_icon} alt="Search"/>
+                                <input type="text" placeholder="Cappuccino"/>
+                            </div>
+                            <img src={icon_card} alt="Shopping Cart"/>
+                        </div>
                     </div>
                 </nav>
             </Container>
