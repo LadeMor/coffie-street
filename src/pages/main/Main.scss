@@ -1,36 +1,40 @@
+
+
 #main-preview{
     background-color: var(--light-accents-color);
     font-family: 'Poppins';
     position: relative;
-    z-index: -2;
+    z-index: 1;
+    color: var(--secondary-color);
     
     .main-preview-block{
-        z-index: -2;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         position: relative;
+        z-index: 4;
 
         .main-preview-block-image{
-            z-index: 0;
+            position: relative;
+            z-index: 4;
             background-color: var(--secondary-color);
             border-radius: 100%;
             width: 416px;
             height: 416px;
-            position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
 
             .main-preview-block-image-exclude{
                 position: absolute;
-                z-index: 1;
+                z-index: 4;
             }
 
             .main-preview-block-image-coffie-cup{
                 position: absolute;
                 transform: translateY(-20px);
-                z-index: 2;
+                z-index: 4;
+                 
             }
 
             .coffie-label-border{
@@ -38,11 +42,12 @@
                 border-radius: 42px;
                 font-weight: bold;
                 box-shadow: -2px 19px 32px #302d2652;
-                position: relative;
+                 position: relative;
+                 z-index: 4;
             }
 
             .border{
-                z-index: 2;
+                z-index: 4;
                 position: absolute;
                 background-color: 7px solid rgb(0, 0, 0);
                 width: 100%;
@@ -60,7 +65,7 @@
 
 
             .coffie-label-title{
-                z-index: 3;
+                z-index: 4;
                 position: absolute;
                 top:35px;
                 left: -60px;
@@ -70,7 +75,7 @@
 
             .coffie-label-rate{
                 position: absolute;
-                z-index: 3;
+                z-index: 4;
                 font-size: 22px;
                 display: flex;
                 flex-direction: row;
@@ -85,7 +90,7 @@
 
             .coffie-label-count{
                 position: absolute;
-                z-index: 3;
+               
                 font-size: 22px;
                 font-size: 22px;
                 padding: 10px 50px 10px 50px;
@@ -94,11 +99,67 @@
             }
         }
 
+        .main-preview-block-text{
+            z-index: 4;
+            position: relative;
+            .main-preview-block-text-buttons{
+                display: flex;
+                align-items: center;
+                gap: 40px;
+
+                .order-btn{
+                    font-size: 14px;
+                    font-weight: bold;
+                    color: white;
+                    background-color: var(--secondary-color);
+                    padding: 12px 32px 12px 32px;
+                    border-radius: 33px;
+                    border: none;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 10px;
+                    cursor: pointer;
+
+                    .btn-white-card-icon{
+                        background-color: var(--primary-color);
+                        border-radius: 100%;
+                        padding: 5px;
+                    }
+                }
+
+                .menu-btn{
+                    padding: 10px 24px 10px 24px;
+                    font-size: 12px;
+                    font-weight: bold;
+                    color: var(--primary-color);
+                    border: none;
+                    background-color: rgba(255, 255, 255, 0);
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .main-preview-block-text h1{
+            font-size: 48px;
+
+            .coffie-focus{
+                color: var(--primary-color);
+            }
+        }
+
+        .main-preview-block-text p{
+            color: var(--light-color);
+            font-size: 18px;
+        }
+
         .bg-top-coffie-beans{
             position: absolute;
-            right: -250px;
+            right: -200px;
             top:-200px;
-            z-index:-1;
+            z-index:3;
+            
         }
 
     }
