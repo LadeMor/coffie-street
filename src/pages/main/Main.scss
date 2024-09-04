@@ -6,6 +6,7 @@
     position: relative;
     z-index: 1;
     color: var(--secondary-color);
+    padding-bottom: 280px;
     
     .main-preview-block{
         display: flex;
@@ -35,28 +36,6 @@
                 transform: translateY(-20px);
                 z-index: 4;
                  
-            }
-
-            .coffie-label-border{
-                background-color: white;
-                border-radius: 42px;
-                font-weight: bold;
-                box-shadow: -2px 19px 32px #302d2652;
-                 position: relative;
-                 z-index: 4;
-            }
-
-            .border{
-                z-index: 4;
-                position: absolute;
-                background-color: 7px solid rgb(0, 0, 0);
-                width: 100%;
-                height: 100%;
-                top:-6px;
-                left: -6px;
-                border: 6px solid rgb(255, 255, 255);
-                border-radius: 42px;
-                opacity: 0.5;
             }
 
             .coffie-label-border h4{
@@ -102,6 +81,9 @@
         .main-preview-block-text{
             z-index: 4;
             position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 100px;
             .main-preview-block-text-buttons{
                 display: flex;
                 align-items: center;
@@ -139,6 +121,27 @@
                     cursor: pointer;
                 }
             }
+
+            .section-title{
+                font-size: 32px;
+                position: relative;
+                z-index: 4;
+                .bg-bottom-coffie-beans{
+                    position: absolute;
+                    left: -140px;
+                    bottom: -260px;
+                    z-index: 3;
+                }
+
+                .underline{
+                    margin: 0;
+                    border-bottom: 4px solid var(--primary-color);
+                    
+                    position: relative;
+                    z-index: 4;
+                    
+                }
+            }
         }
 
         .main-preview-block-text h1{
@@ -162,6 +165,63 @@
             
         }
 
+    }
+
+    
+}
+
+///////////////////////////////////////////////////////////////////////////////////////
+/// ///////////////////////////////////////////////////////////////////////////////////////
+/// ///////////////////////////////////////////////////////////////////////////////////////
+/// ///////////////////////////////////////////////////////////////////////////////////////
+/// 
+
+#coffie-list{
+    background-color: white;
+    height: 600px;
+    position: relative;
+
+    .coffie-list-container{
+
+        position: relative;
+
+        .coffie-list-box{
+            background-color: #F9D9AA;
+            height: 360px;
+            width: 100%;
+            border-radius: 50px;
+            position: absolute;
+            top: -120px;
+            z-index: 6;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+
+            .coffie-item{
+                
+                .coffie-item-preview{
+                    position: relative;
+                    .coffie-item-preview-rate{
+                        position: absolute;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        align-items: center;
+
+                        h4{
+                            margin: 0;
+                        }
+                    }
+
+                }
+
+            }
+
+            .coffie-item-border-box{
+                border-radius: 12px;
+            }
+        }
     }
 
     
