@@ -1,0 +1,113 @@
+.coffie-list-box-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -95px;
+    gap:50px;
+}
+
+.coffie-item{
+
+    
+
+}
+
+
+.coffie-item-border-box{
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.coffie-item-preview{
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.coffie-item-preview img{
+    border-radius: 12px;
+}
+
+.coffie-item-preview-rate{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding:5px;
+    top:10px;
+    left: 10px;
+    h4{
+        margin: 0;
+    }
+}
+
+.coffie-item-text{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    
+    
+}
+
+.coffie-card-buttons-wrapper{
+    display: flex;
+    flex-direction: row;
+    gap: 19px;
+    align-items: center;
+}
+
+.coffie-card-buttons-wrapper button{
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFD28F;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 8px;
+    border: 2px solid #FFD28F;
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 20;
+    position: relative;
+}
+
+.coffie-item-text h1{
+    margin: 0;
+
+}
+
+.coffie-card-buttons-wrapper button:hover{
+    color: var(--primary-color);
+    border-color:  var(--primary-color);
+}
+
+.coffie-card-description{
+    font-size: 14px;
+   color:var(--light-color);
+   width: 160px;
+}
+
+.coffie-item-text-price{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+   
+}
+
+.coffie-item-text-title{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;       
+}
+
+.coffie-card-icon{
+    background-color: var(--primary-color);
+    border-radius: 100%;
+    width: 18px;
+    padding: 9px;
+}

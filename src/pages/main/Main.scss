@@ -199,106 +199,6 @@
             justify-content: center;
             align-items: center;
 
-            .coffie-list-box-wrapper{
-                display: flex;
-                flex-wrap: wrap;
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
-                position: absolute;
-                top: -95px;
-                gap:50px;
-
-                .coffie-item{
-                
-                    .coffie-item-preview{
-                        margin-bottom: 10px;
-                        position: relative;
-    
-                        img{
-                            border-radius: 12px;
-                        }
-    
-                        .coffie-item-preview-rate{
-                            position: absolute;
-                            display: flex;
-                            flex-direction: row;
-                            justify-content: center;
-                            align-items: center;
-                            gap: 5px;
-                            padding:5px;
-                            top:10px;
-                            left: 10px;
-                            h4{
-                                margin: 0;
-                            }
-                        }
-    
-                    }
-
-                    .coffie-item-text{
-                        display: flex;
-                        flex-direction: row;
-                        justify-content: space-between;
-
-                        h1{
-                            margin: 0;
-                        }
-
-                        .coffie-item-text-price{
-                            display: flex;
-                            flex-direction: column;
-                            gap: 10px;
-                            .coffie-card-icon{
-                                background-color: var(--primary-color);
-                                border-radius: 100%;
-                                width: 18px;
-                                padding: 9px;
-                            }
-                        }
-
-                        .coffie-item-text-title{
-                            display: flex;
-                            flex-direction: column;
-                            gap: 10px;
-                            .coffie-card-buttons-wrapper{
-                                display: flex;
-                                flex-direction: row;
-                                gap: 19px;
-                                align-items: center;
-                            }
-
-                            .coffie-card-buttons-wrapper button{
-                                font-size: 16px;
-                                font-weight: bold;
-                                color: #FFD28F;
-                                padding: 10px;
-                                background-color: rgba(255, 255, 255, 0);
-                                border-radius: 8px;
-                                border: 2px solid #FFD28F;
-                                padding: 10px;
-                                cursor: pointer;
-                                transition: 0.3s;
-                                z-index: 20;
-                                position: relative;
-                            }
-
-                            .coffie-card-buttons-wrapper button:hover{
-                                color: var(--primary-color);
-                                border-color:  var(--primary-color);
-                            }
-                        }
-
-                        
-                    }
-    
-                }
-            }
-            
-            .coffie-item-border-box{
-                border-radius: 10px;
-                padding: 20px;
-            }
         }
     }
 
@@ -445,5 +345,54 @@
         }
     }
 
+    
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////
+/// ///////////////////////////////////////////////////////////////////////////////////////
+/// ///////////////////////////////////////////////////////////////////////////////////////
+/// ///////////////////////////////////////////////////////////////////////////////////////
+/// 
+
+
+#products-menu{
+    margin-top: 60px;
+    position: relative;
+    .products-menu-wrapper{
+
+        h1{
+            font-size: 32px;
+            color: black;
+        }
+        .products-menu-list{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 50px;
+
+            h1{
+                font-size: 24px;
+                margin: 0;
+            }
+            p{
+                margin: 0;
+            }
+        }
+
+    }
+
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////
+/// ///////////////////////////////////////////////////////////////////////////////////////
+/// ///////////////////////////////////////////////////////////////////////////////////////
+/// ///////////////////////////////////////////////////////////////////////////////////////
+/// 
+
+
+#customers{
     
 }
