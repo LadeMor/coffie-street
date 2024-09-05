@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 
 import Container from "../../components/container/Container";
 import Header from "../../components/header/Header";
@@ -20,6 +20,28 @@ import coffie_item3 from "../../assets/images/coffie-list/coffie3.png";
 
 
 const Main = () => {
+
+    const coffieProductsPreview = useMemo(() => [
+        {
+            url: coffie_item1,
+            title: "Vanilla Latte",
+            rating: 4.8,
+            price: 21
+        },
+        {
+            url: coffie_item2,
+            title: "Espresso",
+            rating: 4.8,
+            price: 12
+        },
+        {
+            url: coffie_item3,
+            title: "Hazelnut Latte",
+            rating: 4.8,
+            price: 23
+        },
+    ], [])
+
     return (
         <React.Fragment>
             <Header />
@@ -64,20 +86,42 @@ const Main = () => {
                 <Container>
                     <div className="coffie-list-container">
                         <div className="coffie-list-box">
-                            <div className="coffie-item">
-                                <TransparentBorderBox className="coffie-item-border-box" borderRadius="12px">
-                                    <div className="coffie-item-preview">
-                                        <img src={coffie_item1}/>
-                                        <TransparentBorderBox className="coffie-item-preview-rate" borderRadius="42px">
-                                            <h4>4.8</h4>
-                                            <img src={rate_star} />
-                                        </TransparentBorderBox> 
-                                    </div>
-                                </TransparentBorderBox>
+                            <div className="coffie-list-box-wrapper">
+                                {
+                                    coffieProductsPreview.map((item, index) => (
+                                        <div className="coffie-item" key={index}>
+                                            <TransparentBorderBox className="coffie-item-border-box" borderRadius="12px">
+                                                <div className="coffie-item-preview">
+                                                    <img src={item.url} />
+                                                    <TransparentBorderBox className="coffie-item-preview-rate" borderRadius="42px">
+                                                        <h4>{item.rating}</h4>
+                                                        <img src={rate_star} />
+                                                    </TransparentBorderBox>
+                                                </div>
+                                                <div className="coffie-item-text">
+                                                    <div className="coffie-item-text-title">
+                                                        <h1>{item.title}</h1>
+                                                        <div className="coffie-card-buttons-wrapper">
+                                                            <button>Hot</button>
+                                                            <button>Cold</button>
+                                                        </div>
+                                                    </div>
+                                                    <div className="coffie-item-text-price">
+                                                        <h1>{item.price}K</h1>
+                                                        <img src={white_card_icon} className="coffie-card-icon" />
+                                                    </div>
+                                                </div>
+                                            </TransparentBorderBox>
+                                        </div>
+                                    ))
+                                }
                             </div>
                         </div>
                     </div>
                 </Container>
+            </section>
+            <section id="delivery">
+
             </section>
         </React.Fragment>
     );
