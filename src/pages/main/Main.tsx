@@ -1,271 +1,30 @@
-import React, { useMemo } from "react";
+import React from "react";
 
-import Container from "../../components/container/Container";
 import Header from "../../components/header/Header";
-import TransparentBorderBox from "../../components/transparent-border-box/TransparentBorderBox";
-import Product from "../../components/product/Product";
+
+// Sections
+import MainPreview from "../../sections/main-preview/MainPreview";
+import CoffieList from "../../sections/coffie-list/CoffieList";
+import Delivery from "../../sections/delivery/Delivery";
+import AboutUs from "../../sections/about-us/AboutUs";
+import ProductsMenu from "../../sections/products-menu/ProductsMenu";
+import Customers from "../../sections/customers/Customers";
+import Discount from "../../sections/discount/Discount";
 
 import "./Main.scss";
 
-import exclude from "../../assets/icons/Exclude.svg";
-import main_coffie from "../../assets/images/main-coffie.png";
-import rate_star from "../../assets/icons/akar-icons_star.svg";
-import white_card_icon from "../../assets/icons/card-icon-white.svg";
-
-import bg_coffie_beans from "../../assets/images/bg-coffie-beans.png";
-
-import coffie_item1 from "../../assets/images/coffie-list/coffie1.png";
-import coffie_item2 from "../../assets/images/coffie-list/coffie2.png";
-import coffie_item3 from "../../assets/images/coffie-list/coffie3.png";
-
-import coffie_cup from "../../assets/images/delivery/coffee-cup 1.svg";
-import tap from "../../assets/images/delivery/tap 1.svg";
-import food_truck from "../../assets/images/delivery/food-truck 1.svg";
-
-import about_up_cup from "../../assets/images/about-us/About us img.png";
-import about_us_exclude from "../../assets/images/about-us/Exclude multiple.svg";
-
-import menu_product1 from "../../assets/images/menu/menu1.png";
-import menu_product2 from "../../assets/images/menu/menu2.png";
-import menu_product3 from "../../assets/images/menu/menu3.png";
-import menu_product4 from "../../assets/images/menu/menu4.png";
-import menu_product5 from "../../assets/images/menu/menu5.png";
-import menu_product6 from "../../assets/images/menu/menu6.png";
-
-import exclude_2 from "../../assets/images/customers/Exclude (2).svg";
-import person1 from "../../assets/images/customers/people/person1.jpg";
-import person2 from "../../assets/images/customers/people/person2.jpg";
-import person3 from "../../assets/images/customers/people/person3.jpg";
-
 const Main = () => {
-
-    const coffieProductsPreview = useMemo(() => [
-        {
-            id: 1, url: coffie_item1, title: "Vanilla Latte", rating: 4.8, price: 21
-        },
-        {
-            id: 2, url: coffie_item2, title: "Espresso", rating: 4.8, price: 12
-        },
-        {
-            id: 3, url: coffie_item3, title: "Hazelnut Latte", rating: 4.8, price: 23
-        }
-    ], [])
-
-    const menuCoffieList = useMemo(() => [
-        {
-            id: 1,url: menu_product1, title: "Sandwich", rating: 4.8, price: 12, description: "bread with meat and vegetables"
-        },
-        {
-            id: 2,url: menu_product2, title: "Hot Milk", rating: 4.8, price: 12, description: "Hot Milk with less sugar"
-        },
-        {
-            id: 3,url: menu_product3, title: "Coffie Ice Cream", rating: 4.8, price: 12, description: "Coffe with ice cream vanilla"
-        },
-        {
-            id: 4,url: menu_product4, title: "Cappucino", rating: 4.8, price: 12, description: "Hot Cappucino"
-        },
-        {
-            id: 5,url: menu_product5, title: "Moccacinno", rating: 4.8, price: 12, description: "Hot Moccacino"
-        },
-        {
-            id: 6,url: menu_product6, title: "Waffle Ice Cream", rating: 4.8, price: 12, description: "Wafle with Ice cream"
-        },
-    ], [])  
 
     return (
         <React.Fragment>
             <Header />
-            <section id="main-preview">
-                <Container>
-                    <div className="main-preview-block">
-                        <div className="main-preview-block-text">
-                            {/* Fix z-index of this block !!! */}
-                            <div>
-                                <h1>Enjoy your <span className="coffie-focus">coffee</span> <br /> before your activity</h1>
-                                <p>Boost your productivity and build your<br /> mood with a glass of coffee in the morning</p>
-                                <div className="main-preview-block-text-buttons">
-                                    <button className="order-btn">Order now<img src={white_card_icon} alt="White card" className="btn-white-card-icon" /></button>
-                                    <button className="menu-btn">More menu</button>
-                                </div>
-                            </div>
-                            <h1 className="section-title">
-                                Popular <span className="underline">now</span>
-                                <img src={bg_coffie_beans} alt="Coffie beans" className="bg-bottom-coffie-beans" />
-                            </h1>
-                        </div>
-                        <div className="main-preview-block-image">
-                            <img src={exclude} alt="Exclude background" className="main-preview-block-image-exclude" />
-                            <img src={main_coffie} alt="Coffie cup" className="main-preview-block-image-coffie-cup" />
-                            <TransparentBorderBox className="coffie-label-title" borderRadius="42px">
-                                <h4>Cappuccino</h4>
-                            </TransparentBorderBox>
-                            <TransparentBorderBox className="coffie-label-rate" borderRadius="42px">
-                                <h4>4.8</h4>
-                                <img src={rate_star} alt="Rating star" />
-                            </TransparentBorderBox>
-                            <TransparentBorderBox className="coffie-label-count" borderRadius="42px">
-                                <h4>18K</h4>
-                            </TransparentBorderBox>
-                            <img src={bg_coffie_beans} alt="Coffie beans" className="bg-top-coffie-beans" />
-                        </div>
-
-                    </div>
-                </Container>
-            </section>
-            <section id="coffie-list">
-                <Container>
-                    <div className="coffie-list-container">
-                        <div className="coffie-list-box">
-                            <div className="coffie-list-box-wrapper">
-                                {coffieProductsPreview.map((item) => (
-                                    <Product product={item}/>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                </Container>
-            </section>
-            <section id="delivery">
-                <Container>
-                    <h1 className="delivery-title">How to use delivery <span className="delivery-underline">service</span></h1>
-                    <div className="delivery-list">
-                        <div className="delivery-item">
-                            <div className="delivery-item-coffie-tap">
-                                <img src={coffie_cup} alt="Goffie cup"/>
-                                <img src={tap} alt="Tap hand" className="tap-hand"/>
-                            </div>
-                            <div className="delivery-item-text">
-                                <h2>choose your coffee</h2>
-                                <p>there are 20+ coffees for you</p>
-                            </div>
-                        </div>
-                        <div className="delivery-item">
-                            <img src={food_truck} alt="Goffie cup"/>
-                            <div className="delivery-item-text">
-                                <h2>we delivery it to you</h2>
-                                <p>Choose delivery service</p>
-                            </div>
-                        </div>
-                        <div className="delivery-item">
-                            <img src={coffie_cup} alt="Goffie cup"/>
-                            <div className="delivery-item-text">
-                                <h2>Enjoy your coffee</h2>
-                                <p>Choose delivery service</p>
-                            </div>
-                        </div>
-                    </div>
-                </Container>
-            </section>
-            <section id="about-us">
-                <Container>
-                    <div className="about-us-main-wrapper">
-                        <div className="about-us-wrapper">
-                            <TransparentBorderBox className="about-us-image-wrapper" borderRadius="10px">
-                                    <img src={about_up_cup} alt="Coffie cup"/>
-                            </TransparentBorderBox>
-                            <div className="about-us-info">
-                                    <h1>About <span className="underline">us</span></h1>
-                                    <h2>We provide quality coffee, and ready to deliver.</h2>
-                                    <p>We are a company that makes and distributes delicious drinks.
-                                        our main product is made with a secret recipe and available in stores worldwide.</p>
-                                    <button>Get your coffie</button>
-                            </div>
-                        </div>
-                        <img src={about_us_exclude} alt="Coffie cups" className="about-us-exclude"/>
-                    </div>
-                </Container>
-            </section>
-            <section id="products-menu">
-                <Container>
-                    <div className="products-menu-wrapper">
-                        <h1>Special menu <span className="underline">for you</span></h1>
-                        <div className="products-menu-list">
-                            {menuCoffieList.map(item => (
-                                <Product product={item}/>
-                            ))}
-                        </div>
-                    </div>
-                </Container>              
-            </section>
-            <section id="customers">
-                <Container>
-                    <div className="cutomers-main-wrapper">
-                        <div className="customers-text">
-                            <h1>What they say about us</h1>
-                            <p>We always provide the best service<br/> and always maintain the quality of<br/> coffee</p>
-                        </div>
-                        <div className="customers-slider">
-                            <div className="customer-slide-items">
-                                <div className="customer-slide">
-                                    <div className="customer-slide-image">
-                                        <img src={person1} alt="Person"/>
-                                        <div className="slide-image-border"></div>
-                                    </div>
-                                    <div className="customer-slide-text">
-                                        <div className="customer-slide-text-content">
-                                            <h2>Naura</h2>
-                                            <p>I really love the cappucino, the coffee was very smooth</p>
-                                        </div>
-                                        <div className="slide-image-border custom-border-radius"></div>
-                                    </div>
-                                </div>
-                                <div className="customer-slide">
-                                    <div className="customer-slide-image">
-                                        <img src={person2} alt="Person"/>
-                                        <div className="slide-image-border"></div>
-                                    </div>
-                                    <div className="customer-slide-text">
-                                        <div className="customer-slide-text-content">
-                                            <h2>John</h2>
-                                            <p>this coffee shop is very<br/> convenient</p>
-                                        </div>
-                                        <div className="slide-image-border custom-border-radius"></div>
-                                    </div>
-                                </div>
-                                <div className="customer-slide">
-                                    <div className="customer-slide-image">
-                                        <img src={person3} alt="Person"/>
-                                        <div className="slide-image-border"></div>
-                                    </div>
-                                    <div className="customer-slide-text">
-                                        <div className="customer-slide-text-content">
-                                            <h2>Azura</h2>
-                                            <p>the coffee menu here is<br/> very much</p>
-                                        </div>
-                                        <div className="slide-image-border custom-border-radius"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="slider-dots">
-                                <div className="slider-dot active-dot"></div>
-                                <div className="slider-dot"></div>
-                                <div className="slider-dot"></div>
-                            </div>
-                        </div>
-                        <div className="background-plain">
-                            <div className="coffie-exclude-image">
-                                <img src={exclude_2} alt="Coffie cups"/>
-                            </div>
-                        </div>
-                    </div>
-                    
-                </Container>
-            </section>
-            <section id="discount">
-                <Container>
-                    <div className="discount-main-wrapper">
-                        <div className="discount-block">
-                            <div className="discount-block-content">
-                                <h1>Subscribe to get 50% discount price</h1>
-                                <div className="discount-block-input">
-                                    <input type="text" placeholder="Email address"/>
-                                    <button>Order now</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </Container>
-            </section>
+            <MainPreview/>
+            <CoffieList/>
+            <Delivery/>
+            <AboutUs/>
+            <ProductsMenu/>
+            <Customers/>
+            <Discount/>
         </React.Fragment>
     );
 }
