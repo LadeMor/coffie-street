@@ -42,10 +42,11 @@ const MainPreview = () => {
                             <TransparentBorderBox className="coffie-label-count" borderRadius="42px">
                                 <h4>18K</h4>
                             </TransparentBorderBox>
-                            <img src={bg_coffie_beans} alt="Coffie beans" className="bg-top-coffie-beans" />
+                          
                         </div>
 
                     </div>
+                    <img src={bg_coffie_beans} alt="Coffie beans" className="bg-top-coffie-beans" />
                 </Container>
             </section>
     );
