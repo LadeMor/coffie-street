@@ -398,7 +398,7 @@
     margin-top: 160px;
     position: relative;
     z-index: 5;
-    
+    margin-bottom: 120px;
 
     .cutomers-main-wrapper{
         position: relative;
@@ -566,4 +566,79 @@
 
         }
     }
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////
+/// ///////////////////////////////////////////////////////////////////////////////////////
+/// ///////////////////////////////////////////////////////////////////////////////////////
+/// ///////////////////////////////////////////////////////////////////////////////////////
+/// 
+
+
+#discount{
+
+    .discount-main-wrapper{
+
+        .discount-block{
+            width: 1170px;
+            height: 392px;
+            background-image:url("../../assets/images/discount/discount-background.jpg");
+            background-position: center;
+            background-size:  1170px ;
+            border-radius: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .discount-block-content{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap:26px;
+                text-align: center;
+                h1{
+                    font-size: 32px;
+                    font-weight: 700;
+                    color: white;
+                }
+
+
+                .discount-block-input{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    position: relative;
+                    width: 486px;
+                    input{
+                        font-size: 16px;
+                        font-weight: 600;
+                        padding: 17px 16px 17px 16px;
+                        width: 100%;
+                        color: var(--light-color);
+                        border: none;
+                        border-radius: 42px;
+                    }
+
+                    button{
+                        position: absolute;
+                        font-size: 14px;
+                        font-weight: 600;
+                        padding: 12px 32px 12px 32px;
+                        border-radius: 33px;
+                        color: white;
+                        background-color: var(--secondary-color);
+                        border: none;
+                        top:6px;
+                        right: -7px;
+                    }
+
+                }
+            }
+        }
+
+    }
+
 }
