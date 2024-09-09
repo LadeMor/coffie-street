@@ -111,3 +111,9 @@
     width: 18px;
     padding: 9px;
 }
+
+@media screen and (max-width:375px) {
+    .preview-image{
+        width: 260px;
+    }
+}

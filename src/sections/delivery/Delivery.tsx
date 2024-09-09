@@ -37,6 +37,60 @@ const Delivery = () => {
                             </div>
                         </div>
                     </div>
+                    <div className="delivery-list-mobile-medium">
+                        <div className="mobile-medium-row">
+                            <div className="delivery-item">
+                                <div className="delivery-item-coffie-tap">
+                                    <img src={coffie_cup} alt="Goffie cup"/>
+                                    <img src={tap} alt="Tap hand" className="tap-hand"/>
+                                </div>
+                                <div className="delivery-item-text">
+                                    <h2>choose your coffee</h2>
+                                    <p>there are 20+ coffees for you</p>
+                                </div>
+                            </div>
+                            <div className="delivery-item">
+                                <img src={food_truck} alt="Goffie cup"/>
+                                <div className="delivery-item-text">
+                                    <h2>we delivery it to you</h2>
+                                    <p>Choose delivery service</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="delivery-item">
+                            <img src={coffie_cup} alt="Goffie cup"/>
+                            <div className="delivery-item-text">
+                                <h2>Enjoy your coffee</h2>
+                                <p>Choose delivery service</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="delivery-list-mobile-small">
+                        <div className="delivery-item">
+                            <div className="delivery-item-coffie-tap">
+                                <img src={coffie_cup} alt="Goffie cup"/>
+                                <img src={tap} alt="Tap hand" className="tap-hand"/>
+                            </div>
+                            <div className="delivery-item-text">
+                                <h2>choose your coffee</h2>
+                                <p>there are 20+ coffees for you</p>
+                            </div>
+                        </div>
+                        <div className="delivery-item">
+                            <img src={food_truck} alt="Goffie cup"/>
+                            <div className="delivery-item-text">
+                                <h2>we delivery it to you</h2>
+                                <p>Choose delivery service</p>
+                            </div>
+                        </div>
+                        <div className="delivery-item">
+                            <img src={coffie_cup} alt="Goffie cup"/>
+                            <div className="delivery-item-text">
+                                <h2>Enjoy your coffee</h2>
+                                <p>Choose delivery service</p>
+                            </div>
+                        </div>
+                    </div>
                 </Container>
             </section>
     );

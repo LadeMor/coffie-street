@@ -30,6 +30,7 @@
                     color: black;
                     font-size: 32px;
                     margin-bottom: 24px;
+                    word-wrap: break-word;
                 }
 
                 h2{
@@ -37,6 +38,7 @@
                     color: black;
                     font-size: 24px;
                     margin-bottom: 15px;
+                    word-wrap: break-word;
                 }
                 
                 p{
@@ -44,6 +46,7 @@
                     font-size: 18px;
                     color:var(--light-color);
                     margin-bottom: 32px;
+                    word-wrap: break-word;
                 }
 
                 button{
@@ -58,23 +61,73 @@
                 }
             }
         }
+    }
 
-        .about-us-exclude-wrapper{
+    
+    .about-us-exclude-wrapper{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+
+        .about-us-exclude{
+            object-fit: cover;
             position: absolute;
-           
-            width: 100%;
-            height: 100%;
-            .about-us-exclude{
+            z-index: 1;
             
-                position: absolute;
-                z-index: 1;
-            }
         }
+    
+    }
 
-        
+
+}
+
+
+@media screen and (max-width:1070px) {
+    #about-us{
+        height: 850px;
+
+        .about-us-main-wrapper{
+            .about-us-wrapper{
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 125px;
+            }
+           
+        }
+    }
+
+   
+}
+
+@media screen and (max-width:490px) {
+    #about-us{
+        .about-us-main-wrapper{
+            .about-us-wrapper{
+
+
+                .about-us-info{
+                    width: 300px;
+                }
+            }
+           
+        }
+    }
+
+   
+}
+
+@media screen and (max-width:490px) {
+    #about-us{
+        .about-us-main-wrapper{
+            .about-us-wrapper{
+                .about-us-image-wrapper img{
+                    width: 300px;
+                }
+            }
+           
+        }
     }
 }
 
-@media screen and (max-width:1070px) {
-
-}

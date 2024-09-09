@@ -26,7 +26,7 @@ const Product: React.FC<ProductProps> = ({ product }) => {
             <div className="coffie-item" key={product.id}>
                         <TransparentBorderBox className="coffie-item-border-box" borderRadius="12px">
                             <div className="coffie-item-preview">
-                                <img src={product.url} alt={product.title} />
+                                <img src={product.url} alt={product.title} className="preview-image"/>
                                 <TransparentBorderBox className="coffie-item-preview-rate" borderRadius="42px">
                                     <h4>{product.rating}</h4>
                                     <img src={rate_star} alt="Rating star" />

@@ -213,7 +213,11 @@
 
 @media screen and (max-width:479px) {
     #main-preview{
+        overflow-x: hidden;
         .main-preview-block{
+            .main-preview-block-image{
+                transform: scale(0.7);
+            }
             .main-preview-block-text h1{
                 font-size: 38px;
     
@@ -229,7 +233,7 @@
 
 @media screen and (max-width:375px) {
     #main-preview{
-        overflow-x: hidden;
+       
         .main-preview-block{
             .main-preview-block-image{
                 transform: scale(0.6);

@@ -19,10 +19,10 @@ const Main = () => {
         <React.Fragment>
             <Header />
             <MainPreview/>
-            {/* <CoffieList/> */}
-            {/* <Delivery/> */}
-            {/* <AboutUs/> */}
-            {/* <ProductsMenu/> */}
+            <CoffieList/>
+            <Delivery/>
+            <AboutUs/>
+            <ProductsMenu/>
             {/* <Customers/> */}
             {/* <Discount/> */}
         </React.Fragment>

@@ -23,6 +23,34 @@
 
         }
     }
-
-    
 }
+
+@media screen and (max-width:1280px) {
+    #coffie-list{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+@media screen and (max-width:1157px) {
+    #coffie-list{
+        margin-bottom: 300px;
+        .coffie-list-container{
+            .coffie-list-box{
+                height: 700px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:763px) {
+    #coffie-list{
+        margin-bottom: 700px;
+        .coffie-list-container{
+            .coffie-list-box{
+                height: 1100px;
+            }
+        }
+    }
+}
+

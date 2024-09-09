@@ -26,3 +26,22 @@
     }
 
 }
+
+
+@media screen and (max-width:1200px) {
+    #products-menu{
+      
+        .products-menu-wrapper{
+    
+            h1{
+                font-size: 32px;
+                color: black;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            
+    
+        }
+    
+    }
+}
