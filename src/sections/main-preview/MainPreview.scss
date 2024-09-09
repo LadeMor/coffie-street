@@ -5,13 +5,15 @@
  
     color: var(--secondary-color);
     padding-bottom: 280px;
-    
+
+
+
     .main-preview-block{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         position: relative;
-        z-index: 1;
+        z-index: 2;
 
         .main-preview-block-image{
             position: relative;
@@ -23,6 +25,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            position: relative;
+            z-index: 2;
             .main-preview-block-image-exclude{
                 position: absolute;
                 
@@ -152,14 +156,94 @@
       
 
     }
+    
 
     .bg-top-coffie-beans{
         position: absolute;
-        right: 100px;
-        top:-180px;
-
+        right: -180px;
+        top:-210px;
+        z-index: 1;
         
     }
 
     
+}
+
+
+
+@media screen and (max-width:1600px) {
+    .bg-top-coffie-beans{
+        display: none;
+    }
+
+    .bg-bottom-coffie-beans{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    #main-preview{
+        .main-preview-block{
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+    }
+}
+
+@media screen and (max-width:1000px) {
+    #main-preview{
+        .main-preview-block{
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+}
+
+@media screen and (max-width:567px) {
+    #main-preview{
+        .main-preview-block{
+            .main-preview-block-image{
+                transform: scale(0.8);
+            }
+        }
+    }
+}
+
+@media screen and (max-width:479px) {
+    #main-preview{
+        .main-preview-block{
+            .main-preview-block-text h1{
+                font-size: 38px;
+    
+            }
+        }
+
+        .main-preview-block{
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    }
+}
+
+@media screen and (max-width:375px) {
+    #main-preview{
+        overflow-x: hidden;
+        .main-preview-block{
+            .main-preview-block-image{
+                transform: scale(0.6);
+            }
+
+            .main-preview-block-text h1{
+                font-size: 28px;
+    
+            }
+
+            .main-preview-block-text p{
+                font-size: 14px;
+    
+            }
+        }
+    }
 }

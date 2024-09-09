@@ -3,7 +3,6 @@ header{
     font-family: 'Poppins';
     padding-bottom: 40px;
     position: relative;
-   
     
     nav{
         display: flex;
@@ -12,7 +11,8 @@ header{
         align-items: center;
         padding: 25px 0px 25px 0px;
         position: relative;
-       z-index: 2;
+        z-index: 3;
+    
         .header-main-logo{
             
         }
@@ -81,4 +81,39 @@ header{
         
         
     }
+
+    @media screen and (max-width: 1400px) {
+        nav{
+            padding-left:10px;
+            padding-right: 10px;
+        }
+    }
+
+    @media screen and (max-width: 960px) {
+        nav{
+            .header-navigation{
+                .header-links{
+                    display: none;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 470px) {
+        nav{
+            .header-search-panel{
+                .header-search-panel-input-container{
+                    
+                    input{
+                        display: none;
+                    }
+
+                    img{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
 }
+

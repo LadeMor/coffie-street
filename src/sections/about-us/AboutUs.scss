@@ -59,12 +59,22 @@
             }
         }
 
-        .about-us-exclude{
-            
+        .about-us-exclude-wrapper{
             position: absolute;
-            z-index: 1;
+           
+            width: 100%;
+            height: 100%;
+            .about-us-exclude{
+            
+                position: absolute;
+                z-index: 1;
+            }
         }
-    }
 
-    
+        
+    }
+}
+
+@media screen and (max-width:1070px) {
+
 }

@@ -23,7 +23,10 @@ const AboutUs = () => {
                                     <button>Get your coffie</button>
                             </div>
                         </div>
-                        <img src={about_us_exclude} alt="Coffie cups" className="about-us-exclude"/>
+                        {/* <div className="about-us-exclude-wrapper">
+                            <img src={about_us_exclude} alt="Coffie cups" className="about-us-exclude"/>
+                        </div> */}
+                        
                     </div>
                 </Container>
             </section>
