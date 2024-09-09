@@ -31,7 +31,7 @@ const Customers = () => {
                                         <div className="slide-image-border custom-border-radius"></div>
                                     </div>
                                 </div>
-                                <div className="customer-slide">
+                                <div className="customer-slide non-mobile-medium">
                                     <div className="customer-slide-image">
                                         <img src={person2} alt="Person"/>
                                         <div className="slide-image-border"></div>
@@ -44,7 +44,7 @@ const Customers = () => {
                                         <div className="slide-image-border custom-border-radius"></div>
                                     </div>
                                 </div>
-                                <div className="customer-slide">
+                                <div className="customer-slide non-mobile non-mobile-small">
                                     <div className="customer-slide-image">
                                         <img src={person3} alt="Person"/>
                                         <div className="slide-image-border"></div>

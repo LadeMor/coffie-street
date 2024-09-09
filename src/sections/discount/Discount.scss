@@ -1,40 +1,43 @@
-#discount{
+#discount {
 
-    .discount-main-wrapper{
+    .discount-main-wrapper {
 
-        .discount-block{
-            width: 1170px;
+        .discount-block {
+            max-width: 1170px;
             height: 392px;
-            background-image:url("../../assets/images/discount/discount-background.jpg");
+            background-image: url("../../assets/images/discount/discount-background.jpg");
             background-position: center;
-            background-size:  1170px ;
+            background-size: 1170px;
             border-radius: 24px;
             display: flex;
             justify-content: center;
             align-items: center;
 
-            .discount-block-content{
+            .discount-block-content {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                gap:26px;
+                gap: 26px;
                 text-align: center;
-                h1{
+
+                h1 {
                     font-size: 32px;
                     font-weight: 700;
                     color: white;
+                    word-break: keep-all;
                 }
 
 
-                .discount-block-input{
+                .discount-block-input {
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
                     align-items: center;
                     position: relative;
                     width: 486px;
-                    input{
+
+                    input {
                         font-size: 16px;
                         font-weight: 600;
                         padding: 17px 16px 17px 16px;
@@ -44,7 +47,7 @@
                         border-radius: 42px;
                     }
 
-                    button{
+                    button {
                         position: absolute;
                         font-size: 14px;
                         font-weight: 600;
@@ -53,7 +56,7 @@
                         color: white;
                         background-color: var(--secondary-color);
                         border: none;
-                        top:6px;
+                        top: 6px;
                         right: -7px;
                     }
 
@@ -63,4 +66,40 @@
 
     }
 
+}
+
+@media screen and (max-width:580px) {
+    #discount {
+
+        .discount-main-wrapper {
+            padding-left: 10px;
+            padding-right: 10px;
+
+            .discount-block {
+               
+    
+                .discount-block-content {
+                    
+    
+                    h1 {
+                       
+                    }
+    
+    
+                    .discount-block-input {
+                       width: 300px;
+    
+                        input {
+                            
+                        }
+    
+                        button {
+                           
+                        }
+    
+                    }
+                }
+            }
+        }
+    }
 }

@@ -23,8 +23,8 @@ const Main = () => {
             <Delivery/>
             <AboutUs/>
             <ProductsMenu/>
-            {/* <Customers/> */}
-            {/* <Discount/> */}
+            <Customers/>
+            <Discount/>
         </React.Fragment>
     );
 }
