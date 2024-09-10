@@ -1,3 +1,6 @@
+import { useMemo, useRef } from "react";
+import { useInView, motion } from "framer-motion";
+
 import Container from "../../components/container/Container";
 
 import "./Customers.scss";
@@ -8,15 +11,29 @@ import person2 from "../../assets/images/customers/people/person2.jpg";
 import person3 from "../../assets/images/customers/people/person3.jpg";
 
 const Customers = () => {
+
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true });
+
     return(
         <section id="customers">
                 <Container>
-                    <div className="cutomers-main-wrapper">
-                        <div className="customers-text">
+                    <div className="cutomers-main-wrapper" ref={ref}>
+                        <motion.div style={{
+                                transform: isInView ? "none" : "translateY(100px)",
+                                opacity: isInView ? 1 : 0,
+
+                                transition: `all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) ${0.5}s`
+                            }} className="customers-text">
                             <h1>What they say about us</h1>
                             <p>We always provide the best service<br/> and always maintain the quality of<br/> coffee</p>
-                        </div>
-                        <div className="customers-slider">
+                        </motion.div>
+                        <motion.div  style={{
+                                transform: isInView ? "none" : "translateY(100px)",
+                                opacity: isInView ? 1 : 0,
+
+                                transition: `all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) ${0.5}s`
+                            }} className="customers-slider">
                             <div className="customer-slide-items">
                                 <div className="customer-slide">
                                     <div className="customer-slide-image">
@@ -63,7 +80,7 @@ const Customers = () => {
                                 <div className="slider-dot"></div>
                                 <div className="slider-dot"></div>
                             </div>
-                        </div>
+                        </motion.div>
                         <div className="background-plain">
                             <div className="coffie-exclude-image">
                                 <img src={exclude_2} alt="Coffie cups"/>
