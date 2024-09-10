@@ -1,4 +1,6 @@
 import React from "react";
+import { motion } from "framer-motion";
+
 import "./Product.scss";
 
 import TransparentBorderBox from "../transparent-border-box/TransparentBorderBox";
@@ -16,47 +18,44 @@ interface ProductItem {
 }
 
 interface ProductProps {
-    product: ProductItem
+    product: ProductItem,
+    style?: React.CSSProperties
 }
 
-const Product: React.FC<ProductProps> = ({ product }) => {
+const Product: React.FC<ProductProps> = ({ product, style }) => {
 
     return (
-        
-            <div className="coffie-item" key={product.id}>
-                        <TransparentBorderBox className="coffie-item-border-box" borderRadius="12px">
-                            <div className="coffie-item-preview">
-                                <img src={product.url} alt={product.title} className="preview-image"/>
-                                <TransparentBorderBox className="coffie-item-preview-rate" borderRadius="42px">
-                                    <h4>{product.rating}</h4>
-                                    <img src={rate_star} alt="Rating star" />
-                                </TransparentBorderBox>
-                            </div>
-                            <div className="coffie-item-text">
-                                <div className="coffie-item-text-title">
-                                    <h1>{product.title}</h1>
-                                    {/* <div className="coffie-card-buttons-wrapper">
-                                        <button>Hot</button>
-                                        <button>Cold</button>
-                                    </div> */}
+        <div
+        className="coffie-item" key={product.id} style={style}>
+            <TransparentBorderBox className="coffie-item-border-box" borderRadius="12px">
+                <div className="coffie-item-preview">
+                    <img src={product.url} alt={product.title} className="preview-image" />
+                    <TransparentBorderBox className="coffie-item-preview-rate" borderRadius="42px">
+                        <h4>{product.rating}</h4>
+                        <img src={rate_star} alt="Rating star" />
+                    </TransparentBorderBox>
+                </div>
+                <div className="coffie-item-text">
+                    <div className="coffie-item-text-title">
+                        <h1>{product.title}</h1>
 
-                                    {product.description ?
-                                        <p className="coffie-card-description">bread with meat and vegetables</p>
-                                        :
-                                        <div className="coffie-card-buttons-wrapper">
-                                            <button>Hot</button>
-                                            <button>Cold</button>
-                                        </div>
-                                    }
-                                </div>
-                                <div className="coffie-item-text-price">
-                                    <h1>{product.price}K</h1>
-                                    <img src={white_card_icon} alt="White card" className="coffie-card-icon" />
-                                </div>
+                        {product.description ?
+                            <p className="coffie-card-description">bread with meat and vegetables</p>
+                            :
+                            <div className="coffie-card-buttons-wrapper">
+                                <button>Hot</button>
+                                <button>Cold</button>
                             </div>
-                        </TransparentBorderBox>
+                        }
                     </div>
-    
+                    <div className="coffie-item-text-price">
+                        <h1>{product.price}K</h1>
+                        <img src={white_card_icon} alt="White card" className="coffie-card-icon" />
+                    </div>
+                </div>
+            </TransparentBorderBox>
+        </div>
+
     );
 }
 

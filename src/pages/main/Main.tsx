@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useScroll, motion } from "framer-motion";
 
 import Header from "../../components/header/Header";
 
@@ -15,16 +16,17 @@ import "./Main.scss";
 
 const Main = () => {
 
+
     return (
         <React.Fragment>
             <Header />
-            <MainPreview/>
-            <CoffieList/>
-            <Delivery/>
-            <AboutUs/>
-            <ProductsMenu/>
-            <Customers/>
-            <Discount/>
+            <MainPreview />
+            <CoffieList />
+            <Delivery />
+            <AboutUs />
+            <ProductsMenu />
+            <Customers />
+            <Discount />
         </React.Fragment>
     );
 }
