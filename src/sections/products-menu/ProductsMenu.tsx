@@ -1,4 +1,5 @@
-import { useMemo } from "react";
+import { useEffect, useMemo, useRef  } from "react";
+import { useInView, motion } from "framer-motion";
 
 import Container from "../../components/container/Container";
 import Product from "../../components/product/Product";
@@ -14,6 +15,10 @@ import menu_product6 from "../../assets/images/menu/menu6.png";
 
 const ProductsMenu = () => {
 
+    const ref = useRef(null);
+    let isInView = useInView(ref, {once: true});
+
+  
     const menuCoffieList = useMemo(() => [
         {
             id: 1,url: menu_product1, title: "Sandwich", rating: 4.8, price: 12, description: "bread with meat and vegetables"
@@ -35,14 +40,21 @@ const ProductsMenu = () => {
         },
     ], [])  
 
+
+
     return( 
         <section id="products-menu">
                 <Container>
-                    <div className="products-menu-wrapper">
+                    <div className="products-menu-wrapper" ref={ref}>
                         <h1>Special menu <span className="underline">for you</span></h1>
                         <div className="products-menu-list">
-                            {menuCoffieList.map(item => (
-                                <Product product={item}/>
+                            {menuCoffieList.map((item, index) => (
+                                <Product product={item} style={{
+                                    transform: isInView ? "none" : "translateY(100px)",
+                                    opacity: isInView ? 1 : 0,
+    
+                                    transition: `all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) ${isInView ? 0.5 + (index * 0.2) : 0}s`
+                                }}/>
                             ))}
                         </div>
                     </div>
