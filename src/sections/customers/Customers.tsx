@@ -12,35 +12,8 @@ import person3 from "../../assets/images/customers/people/person3.jpg";
 import person4 from "../../assets/images/customers/people/person4.jpg";
 import person5 from "../../assets/images/customers/people/person5.jpg";
 
-interface CustomerObject {
-    url: string,
-    name: string,
-    review: string
-}
 
 const Customers = () => {
-
-    const ref = useRef(null);
-    const isInView = useInView(ref, { once: true });
-
-    const [currentSlide, setCurrentSlide] = useState(0);
-    const [sliderSize, setSliderSize] = useState(3);
-
-    useEffect(() => {
-
-        if(window.innerWidth <= 1500 && window.innerWidth > 1180){
-            setSliderSize(2);
-            console.log("Medium");
-        }else if(window.innerWidth <= 1180){
-            setSliderSize(1);
-            console.log("Small");
-        }else{
-            setSliderSize(3);
-        }
-
-         chunckedArray = chunkArray(customersList, sliderSize)
-
-    }, [window.innerWidth])
 
     const customersList = useMemo(() => [
         { url: person1, name: "Naura", review: "I really love the cappucino, the coffee was very smooth" },
@@ -54,6 +27,41 @@ const Customers = () => {
         { url: person5, name: "Iona", review: "I really love the cappucino, the coffee was very smooth" },
     ], [])
 
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true });
+
+    const [currentSlide, setCurrentSlide] = useState(0);
+    const [sliderSize, setSliderSize] = useState(3);
+
+    useEffect(() => {
+
+        const handleResize = () => {
+            if(window.innerWidth <= 1500 && window.innerWidth > 1180){
+                setSliderSize(2);
+                console.log("Medium");
+            }else if(window.innerWidth <= 1180){
+                setSliderSize(1);
+                console.log("Small");
+            }else{
+                setSliderSize(3);
+            }
+        }
+
+        window.addEventListener('resize', handleResize);
+
+        handleResize();
+
+         return () => {
+            window.removeEventListener('resize', handleResize);
+         }
+
+    }, [])
+
+    useEffect(() => {
+        chunckedArray.current = chunkArray(customersList, sliderSize)
+    }, [customersList, sliderSize])
+
+
     const chunkArray = (array: any[], size: number) => {
         const chunks = [];
         for (let i = 0; i < array.length; i += size) {
@@ -62,34 +70,17 @@ const Customers = () => {
         return chunks;
     }
 
-    let chunckedArray = chunkArray(customersList, sliderSize)
+    let chunckedArray = useRef(chunkArray(customersList, sliderSize));
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setCurrentSlide((prev) => (prev + 1) % chunckedArray.length);
+            setCurrentSlide((prev) => (prev + 1) % chunckedArray.current.length);
         }, 3000);
         return () => clearInterval(interval);
     }, []);
 
     const onSliderDotClick = (dotIndex: number) => {
         setCurrentSlide(dotIndex);
-    }
-
-    const selectMobileSlides = (index: number): string => {
-        switch (index) {
-            case 0:
-                return "";
-                break;
-            case 1:
-                return "non-mobile-medium";
-                break;
-            case 2:
-                return "non-mobile-small";
-                break;
-            default:
-                return "";
-                break;
-        }
     }
 
     return (
@@ -150,7 +141,7 @@ const Customers = () => {
                             </div>
                         </div>
                         {/* /////////////////////////////////////////// */}
-                        {chunckedArray.map((chunk, index) => (
+                        {chunckedArray.current.map((chunk, index) => (
                             <AnimatePresence>
                                 {currentSlide === index ?
                                     <motion.div
@@ -179,7 +170,7 @@ const Customers = () => {
                             </AnimatePresence>
                         ))}
                         <div className="slider-dots">
-                            {chunckedArray.map((item, index) => (
+                            {chunckedArray.current.map((item, index) => (
                                 <div
                                     onClick={() => onSliderDotClick(index)}
                                     className={`slider-dot ${currentSlide === index ? "active-dot" : null}`}></div>
