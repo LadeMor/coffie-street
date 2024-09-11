@@ -24,13 +24,23 @@ const Customers = () => {
     const isInView = useInView(ref, { once: true });
 
     const [currentSlide, setCurrentSlide] = useState(0);
+    const [sliderSize, setSliderSize] = useState(3);
 
     useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentSlide((prev) => (prev + 1) % 3);
-        }, 3000);
-        return () => clearInterval(interval);
-    }, []);
+
+        if(window.innerWidth <= 1500 && window.innerWidth > 1180){
+            setSliderSize(2);
+            console.log("Medium");
+        }else if(window.innerWidth <= 1180){
+            setSliderSize(1);
+            console.log("Small");
+        }else{
+            setSliderSize(3);
+        }
+
+         chunckedArray = chunkArray(customersList, sliderSize)
+
+    }, [window.innerWidth])
 
     const customersList = useMemo(() => [
         { url: person1, name: "Naura", review: "I really love the cappucino, the coffee was very smooth" },
@@ -52,10 +62,34 @@ const Customers = () => {
         return chunks;
     }
 
-    const chunckedArray = chunkArray(customersList, 3);
+    let chunckedArray = chunkArray(customersList, sliderSize)
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentSlide((prev) => (prev + 1) % chunckedArray.length);
+        }, 3000);
+        return () => clearInterval(interval);
+    }, []);
 
     const onSliderDotClick = (dotIndex: number) => {
         setCurrentSlide(dotIndex);
+    }
+
+    const selectMobileSlides = (index: number): string => {
+        switch (index) {
+            case 0:
+                return "";
+                break;
+            case 1:
+                return "non-mobile-medium";
+                break;
+            case 2:
+                return "non-mobile-small";
+                break;
+            default:
+                return "";
+                break;
+        }
     }
 
     return (
@@ -126,7 +160,7 @@ const Customers = () => {
                                         transition={{ duration: 1 }}
                                         className="customer-slide-items">
                                         {chunk.map((item, index) => (
-                                            <div className="customer-slide">
+                                            <div className={`customer-slide`}>
                                                 <div className="customer-slide-image">
                                                     <img src={item.url} alt="Person" />
                                                     <div className="slide-image-border"></div>
@@ -147,8 +181,8 @@ const Customers = () => {
                         <div className="slider-dots">
                             {chunckedArray.map((item, index) => (
                                 <div
-                                onClick={() => onSliderDotClick(index)}
-                                 className={`slider-dot ${currentSlide === index ? "active-dot" : null}`}></div>
+                                    onClick={() => onSliderDotClick(index)}
+                                    className={`slider-dot ${currentSlide === index ? "active-dot" : null}`}></div>
                             ))}
                         </div>
                     </motion.div>
