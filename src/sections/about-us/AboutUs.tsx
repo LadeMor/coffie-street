@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { useInView, motion } from "framer-motion";
+import { useInView} from "framer-motion";
 
 import Container from "../../components/container/Container";
 import TransparentBorderBox from "../../components/transparent-border-box/TransparentBorderBox";

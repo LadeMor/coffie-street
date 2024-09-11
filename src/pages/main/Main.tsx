@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import { useScroll, motion } from "framer-motion";
+import React from "react";
 
 import Header from "../../components/header/Header";
 

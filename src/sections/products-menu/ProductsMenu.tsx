@@ -1,5 +1,5 @@
-import { useEffect, useMemo, useRef  } from "react";
-import { useInView, motion } from "framer-motion";
+import {useMemo, useRef  } from "react";
+import { useInView } from "framer-motion";
 
 import Container from "../../components/container/Container";
 import Product from "../../components/product/Product";
